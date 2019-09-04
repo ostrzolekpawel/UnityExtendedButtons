@@ -53,7 +53,7 @@ namespace ExtendedButtons.CustomInput
 
         public void Update()
         {
-            if (!Enabled) return;
+            if (!Enabled) return; 
             Input?.Tick();
             buttonsListener?.Listener();
         }
