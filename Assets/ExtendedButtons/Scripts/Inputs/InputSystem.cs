@@ -9,16 +9,14 @@ namespace ExtendedButtons.CustomInput
     public class InputSystem : MonoBehaviour
     {
         private static event Action OnInputChange;
-        private static ButtonsListenerCustomInput buttonsListener;
+        private static ButtonsListener buttonsListener;
         public static bool Enabled = true;
 
         private static Input _input;
         public static Input Input
         {
             get {
-                if (Enabled)
-                    return _input;
-                return null;
+                return _input;
             }
             set {
                 if (_input == null || _input.GetType() != value.GetType())
@@ -57,7 +55,33 @@ namespace ExtendedButtons.CustomInput
         {
             if (!Enabled) return;
             Input?.Tick();
-            buttonsListener?.Tick();
+            buttonsListener?.Listener();
+        }
+
+        public bool WasButtonPressed(int id)
+        {
+            if (InputEnable())
+                return Input.WasButtonPressed(id);
+            return false;
+        }
+        
+        public bool IsButtonPressDown(int id)
+        {
+            if (InputEnable())
+                return Input.IsButtonPressDown(id);
+            return false;
+        }
+        
+        public bool WasButtonReleased(int id)
+        {
+            if (InputEnable())
+                return Input.WasButtonReleased(id);
+            return false;
+        }
+
+        private bool InputEnable()
+        {
+            return Enabled && Input != null;
         }
     }
 }

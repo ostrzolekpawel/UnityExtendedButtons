@@ -3,7 +3,7 @@ using Input = ExtendedButtons.CustomInput.Input;
 
 namespace ExtendedButtons
 {
-    public class ButtonsListenerCustomInput
+    public class ButtonsListenerCustomInput : ButtonsListener
     {
         protected readonly Camera button3DCamera;
         protected readonly Input input;
@@ -49,14 +49,10 @@ namespace ExtendedButtons
         } 
         #endregion
 
-        public virtual void Tick()
+        public override void Listener()
         {
-            if (input != null)
-                Listener();
-        }
-        
-        protected virtual void Listener()
-        {
+            if (input == null) return;
+
             if (input.WasButtonReleased(0) && buttonLocked != null)
             {
                 buttonLocked.onUp?.Invoke();
