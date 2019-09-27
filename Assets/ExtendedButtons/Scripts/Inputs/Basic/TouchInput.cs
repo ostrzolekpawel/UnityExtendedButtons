@@ -102,7 +102,10 @@ namespace ExtendedButtons.CustomInput
             base.Tick();
 
             if (UnityEngine.Input.touchCount != 0)
+            {
+                Position = UnityEngine.Input.GetTouch(0).position;
                 DeltaPosition = UnityEngine.Input.GetTouch(0).deltaPosition;
+            }
             else
                 DeltaPosition = Vector3.zero;
 
