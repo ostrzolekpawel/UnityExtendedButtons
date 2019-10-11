@@ -69,7 +69,8 @@ namespace ExtendedButtons
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
             
             Ray ray = button3DCamera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, layerMask))
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, maxDistance, layerMask))
             {
                 Button3D button = hit.transform.GetComponent<Button3D>();
                 if (button != null)
