@@ -36,6 +36,19 @@ namespace ExtendedButtons.Example
                 Debug.Log("OnButton Exit");
                 meshRenderer.material = white;
             });
+
+            button?.onBeginDrag.AddListener(() =>
+            {
+                Debug.Log("OnButton BeginDrag");
+            });
+            button?.onDrag.AddListener(() =>
+            {
+                Debug.Log("OnButton Drag");
+            });
+            button?.onEndDrag.AddListener(() =>
+            {
+                Debug.Log("OnButton EndDrag");
+            });
         }
     }
 }

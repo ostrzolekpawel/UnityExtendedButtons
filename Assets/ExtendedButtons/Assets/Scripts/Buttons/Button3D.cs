@@ -7,11 +7,17 @@ namespace ExtendedButtons
     public class Button3D : MonoBehaviour
     {
         public bool Interactable { get; set; } = true;
+
         public ButtonEvent onEnter;
         public ButtonEvent onDown;
         public ButtonEvent onUp;
         public ButtonEvent onClick;
         public ButtonEvent onExit;
+
+        public ButtonEvent onBeginDrag;
+        public ButtonEvent onDrag;
+        public ButtonEvent onEndDrag;
+
         protected bool isInit = false;
 
 
@@ -30,6 +36,13 @@ namespace ExtendedButtons
                 onEnter = new ButtonEvent();
             if (onExit == null)
                 onExit = new ButtonEvent();
+
+            if (onBeginDrag == null)
+                onBeginDrag = new ButtonEvent();
+            if (onDrag == null)
+                onDrag = new ButtonEvent();
+            if (onEndDrag == null)
+                onEndDrag = new ButtonEvent();
         }
 
         protected void Awake()

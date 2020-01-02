@@ -6,7 +6,7 @@ namespace ExtendedButtons
     /// <summary>
     /// Shoud by only one on scene
     /// </summary>
-    public class ButtonsListenerBasic : ButtonsListenerMono
+    public class ButtonsListenerBasicObsolete : ButtonsListenerMono
     {
         /// <summary>
         /// listener needs camera to shot a ray from screen to point
@@ -41,24 +41,9 @@ namespace ExtendedButtons
         private Vector3 firstInputPosition;
 
         /// <summary>
-        /// Keep track lsat input position for drag event
-        /// </summary>
-        private Vector3 lastInputPosition;
-
-        /// <summary>
         /// flag to detect after click down and up if distance was bigger than trashHold
         /// </summary>
         private bool moved = false;
-
-        /// <summary>
-        /// flag to detect drag and to rememver invoke onEndDrag when button is up
-        /// </summary>
-        private bool dragMoved = false;
-
-        /// <summary>
-        /// when true: invoke onClick event, even after pointer onDown was moved
-        /// </summary>
-        [SerializeField] private bool acceptClickAfterMove = false;
 
         /// <summary>
         /// button3D is locked when pointer is down
@@ -76,34 +61,13 @@ namespace ExtendedButtons
             if (Input.GetMouseButtonUp(0) && buttonLocked != null)
             {
                 buttonLocked.onUp?.Invoke();
-
-                // invoke onClick event when
-                // pointer was not moved or
-                // when flag allows read click after pointer and was still on this same object
-                if (!moved || 
-                    (acceptClickAfterMove && (followedButton3D == buttonLocked)))
+                if (!moved)
                     buttonLocked.onClick?.Invoke();
-                if (dragMoved)
-                {
-                    buttonLocked.onEndDrag?.Invoke();
-                    dragMoved = false;
-                }
                 buttonLocked = null;
             }
 
-            // when object was clicked (onDown) and also was moved then assume dragging
-            if (buttonLocked != null && moved)
-            {
-                float movedDistance = Mathf.Abs(Vector3.Distance(lastInputPosition, Input.mousePosition));
-                if (movedDistance > moveTrashHold)
-                {
-                    buttonLocked.onDrag?.Invoke();
-                    dragMoved = true;
-                }
-            }
-
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
-
+            
             Ray ray = button3DCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, maxDistance, layerMask))
@@ -126,15 +90,13 @@ namespace ExtendedButtons
                         buttonLocked = button;
                     }
 
-                    // button is pressed on Button3D, check if cursor is moved and cancel possibility to onClick (when flag: acceptClickAfterMove is false)
-                    // start read dragging
+                    // button is pressed on Button3D, check if cursor is moved and cancel possibility to onClick if necessary
                     if (Input.GetMouseButton(0))
                     {
                         float movedDistance = Mathf.Abs(Vector3.Distance(firstInputPosition, Input.mousePosition));
                         if (!moved && movedDistance > moveTrashHold)
                         {
                             moved = true;
-                            button.onBeginDrag?.Invoke();
                         }
                     }
                 }
@@ -149,8 +111,6 @@ namespace ExtendedButtons
                 followedButton3D?.onExit?.Invoke();
                 followedButton3D = null;
             }
-
-            lastInputPosition = Input.mousePosition;
-        }
+        }        
     }
 }
