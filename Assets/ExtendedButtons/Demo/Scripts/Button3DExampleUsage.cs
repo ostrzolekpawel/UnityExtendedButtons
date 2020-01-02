@@ -14,27 +14,40 @@ namespace ExtendedButtons.Example
             var button = GetComponent<Button3D>();
             button?.onEnter.AddListener(() =>
             {
-                Debug.Log("OnButton Enter");
+                Debug.Log($"OnButton Enter {gameObject.name}");
                 meshRenderer.material = red;
             });
             button?.onDown.AddListener(() =>
             {
-                Debug.Log("OnButton Down");
+                Debug.Log($"OnButton Down {gameObject.name}");
                 child.SetActive(true);
             });
             button?.onClick.AddListener(() =>
             {
-                Debug.Log("OnButton Click");
+                Debug.Log($"OnButton Click {gameObject.name}");
             });
             button?.onUp.AddListener(() =>
             {
-                Debug.Log("OnButton Up");
+                Debug.Log($"OnButton Up {gameObject.name}");
                 child.SetActive(false);
             });
             button?.onExit.AddListener(() =>
             {
-                Debug.Log("OnButton Exit");
+                Debug.Log($"OnButton Exit {gameObject.name}");
                 meshRenderer.material = white;
+            });
+
+            button?.onBeginDrag.AddListener(() =>
+            {
+                Debug.Log($"OnButton BeginDrag {gameObject.name}");
+            });
+            button?.onDrag.AddListener(() =>
+            {
+                Debug.Log($"OnButton Drag {gameObject.name}");
+            });
+            button?.onEndDrag.AddListener(() =>
+            {
+                Debug.Log($"OnButton EndDrag {gameObject.name}");
             });
         }
     }

@@ -6,7 +6,7 @@ namespace ExtendedButtons
     /// <summary>
     /// Shoud by only one on scene
     /// </summary>
-    public class ButtonsListenerBasic : ButtonsListenerMono
+    public class ButtonsListenerBasicOld : ButtonsListenerMono
     {
         /// <summary>
         /// listener needs camera to shot a ray from screen to point
@@ -41,24 +41,9 @@ namespace ExtendedButtons
         private Vector3 firstInputPosition;
 
         /// <summary>
-        /// Keep track lsat input position for drag event
-        /// </summary>
-        private Vector3 lastInputPosition;
-
-        /// <summary>
         /// flag to detect after click down and up if distance was bigger than trashHold
         /// </summary>
         private bool moved = false;
-
-        /// <summary>
-        /// flag to detect drag and then eventually play onEndDrag when button is up
-        /// </summary>
-        private bool dragMoved = false;
-
-        /// <summary>
-        /// when true: invoke onClick event, even after onDown mouse was moved (on this same object)
-        /// </summary>
-        [SerializeField] private bool acceptClickAfterMove = false;
 
         /// <summary>
         /// button3D is locked when pointer is down
@@ -76,28 +61,13 @@ namespace ExtendedButtons
             if (Input.GetMouseButtonUp(0) && buttonLocked != null)
             {
                 buttonLocked.onUp?.Invoke();
-                if (!moved || acceptClickAfterMove)
+                if (!moved)
                     buttonLocked.onClick?.Invoke();
-                if (dragMoved)
-                {
-                    buttonLocked.onEndDrag?.Invoke();
-                    dragMoved = false;
-                }
                 buttonLocked = null;
             }
 
-            if (buttonLocked != null && moved)
-            {
-                float movedDistance = Mathf.Abs(Vector3.Distance(lastInputPosition, Input.mousePosition));
-                if (movedDistance > moveTrashHold)
-                {
-                    buttonLocked.onDrag?.Invoke();
-                    dragMoved = true;
-                }
-            }
-
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
-
+            
             Ray ray = button3DCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, maxDistance, layerMask))
             {
@@ -126,7 +96,6 @@ namespace ExtendedButtons
                         if (!moved && movedDistance > moveTrashHold)
                         {
                             moved = true;
-                            button.onBeginDrag?.Invoke();
                         }
                     }
                 }
@@ -141,8 +110,6 @@ namespace ExtendedButtons
                 followedButton3D?.onExit?.Invoke();
                 followedButton3D = null;
             }
-
-            lastInputPosition = Input.mousePosition;
-        }
+        }        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace ExtendedButtons.Example
@@ -36,5 +37,19 @@ namespace ExtendedButtons.Example
                 debugText.text = "OnButton Exit";
             });
         }
+
+        public void OnBeginDrag()
+        {
+            Debug.Log("OnBeginDrag");
+        }
+        public void OnDrag()
+        {
+            Debug.Log("OnDrag");
+        }
+        public void OnEndDrag()
+        {
+            Debug.Log("OnEndDrag");
+        }
+
     }
 }

@@ -3,7 +3,7 @@ using Input = ExtendedButtons.CustomInput.Input;
 
 namespace ExtendedButtons
 {
-    public class ButtonsListenerCustomInput : ButtonsListener
+    public class ButtonsListenerCustomInputOld : ButtonsListener
     {
         protected readonly Camera button3DCamera;
         protected readonly Input input;
@@ -13,11 +13,7 @@ namespace ExtendedButtons
 
         protected Button3D followedButton3D = null;
         protected Vector3 firstInputPosition;
-        protected Vector3 lastInputPosition;
         protected bool moved = false;
-        protected bool dragMoved = false;
-
-        private bool acceptClickAfterMove = false;
 
         /// <summary>
         /// button3D is locked when pointer is down
@@ -25,32 +21,32 @@ namespace ExtendedButtons
         protected Button3D buttonLocked;
 
         #region Constructors
-        public ButtonsListenerCustomInput(Input input)
+        public ButtonsListenerCustomInputOld(Input input)
         {
             this.input = input;
             button3DCamera = Camera.main;
         }
 
-        public ButtonsListenerCustomInput(Input input, Camera camera)
+        public ButtonsListenerCustomInputOld(Input input, Camera camera)
         {
             this.input = input;
             button3DCamera = camera;
         }
 
-        public ButtonsListenerCustomInput(Input input, Camera camera, float maxDistance)
+        public ButtonsListenerCustomInputOld(Input input, Camera camera, float maxDistance)
         {
             this.input = input;
             button3DCamera = camera;
             this.maxDistance = maxDistance;
         }
 
-        public ButtonsListenerCustomInput(Input input, Camera camera, float maxDistance, LayerMask layerMask)
+        public ButtonsListenerCustomInputOld(Input input, Camera camera, float maxDistance, LayerMask layerMask)
         {
             this.input = input;
             button3DCamera = camera;
             this.maxDistance = maxDistance;
             this.layerMask = layerMask;
-        }
+        } 
         #endregion
 
         public override void Listener()
@@ -60,24 +56,9 @@ namespace ExtendedButtons
             if (input.WasButtonReleased(0) && buttonLocked != null)
             {
                 buttonLocked.onUp?.Invoke();
-                if (!moved || acceptClickAfterMove)
+                if (!moved)
                     buttonLocked.onClick?.Invoke();
-                if (dragMoved)
-                {
-                    buttonLocked.onEndDrag?.Invoke();
-                    dragMoved = false;
-                }
                 buttonLocked = null;
-            }
-
-            if (buttonLocked != null && moved)
-            {
-                float movedDistance = Mathf.Abs(Vector3.Distance(lastInputPosition, input.Position));
-                if (movedDistance > moveTrashHold)
-                {
-                    buttonLocked.onDrag?.Invoke();
-                    dragMoved = true;
-                }
             }
 
             if (input.IsPointerOverGameObject) return;
@@ -108,10 +89,7 @@ namespace ExtendedButtons
                     {
                         float movedDistance = Mathf.Abs(Vector3.Distance(firstInputPosition, input.Position));
                         if (!moved && movedDistance > moveTrashHold)
-                        {
                             moved = true;
-                            button.onBeginDrag?.Invoke();
-                        }
                     }
                 }
                 else
@@ -125,8 +103,6 @@ namespace ExtendedButtons
                 followedButton3D?.onExit?.Invoke();
                 followedButton3D = null;
             }
-
-            lastInputPosition = input.Position;
         }
     }
 }

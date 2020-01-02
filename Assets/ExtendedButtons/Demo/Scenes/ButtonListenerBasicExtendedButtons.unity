@@ -371,6 +371,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  onBeginDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onEndDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!65 &347399126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -457,6 +472,7 @@ GameObject:
   - component: {fileID: 425327651}
   - component: {fileID: 425327650}
   - component: {fileID: 425327653}
+  - component: {fileID: 425327654}
   m_Layer: 5
   m_Name: ViaScript
   m_TagString: Untagged
@@ -549,6 +565,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  onBeginDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onEndDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &425327651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,6 +630,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugText: {fileID: 437775303}
+--- !u!114 &425327654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425327648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 437775303}
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: On Begin Drag
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 425327653}
+          m_MethodName: OnBeginDrag
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 437775303}
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: On Drag
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 425327653}
+          m_MethodName: OnDrag
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 437775303}
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: On End Drag
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 425327653}
+          m_MethodName: OnEndDrag
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &437775300
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +890,21 @@ MonoBehaviour:
     m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onBeginDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onEndDrag:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
@@ -1033,6 +1176,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  onBeginDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onEndDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!65 &756775460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1178,7 +1336,23 @@ PrefabInstance:
       propertyPath: button3DCamera
       value: 
       objectReference: {fileID: 963194227}
-    m_RemovedComponents: []
+    - target: {fileID: 4286868628076636522, guid: b901940dd073fde4c8b54624e4175137,
+        type: 3}
+      propertyPath: button3DCamera
+      value: 
+      objectReference: {fileID: 963194227}
+    - target: {fileID: 4286868628076636522, guid: b901940dd073fde4c8b54624e4175137,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286868628076636522, guid: b901940dd073fde4c8b54624e4175137,
+        type: 3}
+      propertyPath: acceptClickAfterMove
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3426588391715367800, guid: b901940dd073fde4c8b54624e4175137, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b901940dd073fde4c8b54624e4175137, type: 3}
 --- !u!1 &963194225
 GameObject:
@@ -1877,6 +2051,21 @@ MonoBehaviour:
           m_StringArgument: OnButton Exit
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onBeginDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onEndDrag:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1809047364
