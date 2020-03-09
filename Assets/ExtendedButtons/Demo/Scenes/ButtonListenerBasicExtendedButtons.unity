@@ -351,6 +351,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  onBeginDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onEndDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!65 &347399126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -493,30 +508,45 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 425327651}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   onEnter:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onDown:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onUp:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onExit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onBeginDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onEndDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &425327651
 MonoBehaviour:
@@ -717,6 +747,21 @@ MonoBehaviour:
     m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onBeginDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onEndDrag:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
@@ -953,6 +998,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onBeginDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onEndDrag:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: ExtendedButtons.Button3D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!65 &756775460
@@ -1640,6 +1700,22 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1809047364}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1654217481}
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OnButton Click
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   onEnter:
     m_PersistentCalls:
       m_Calls:
@@ -1654,7 +1730,7 @@ MonoBehaviour:
           m_StringArgument: OnButton Enter
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onDown:
     m_PersistentCalls:
@@ -1670,7 +1746,7 @@ MonoBehaviour:
           m_StringArgument: OnButton Down
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onUp:
     m_PersistentCalls:
@@ -1686,23 +1762,7 @@ MonoBehaviour:
           m_StringArgument: OnButton Up
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1654217481}
-        m_MethodName: set_text
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: OnButton Click
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onExit:
     m_PersistentCalls:
@@ -1718,7 +1778,22 @@ MonoBehaviour:
           m_StringArgument: OnButton Exit
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: ExtendedButtons.Button2D+ButtonEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onBeginDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onEndDrag:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1809047364
 MonoBehaviour:

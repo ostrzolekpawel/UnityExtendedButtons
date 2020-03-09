@@ -8,15 +8,15 @@ namespace ExtendedButtons
     {
         public bool Interactable { get; set; } = true;
 
-        public ButtonEvent onEnter;
-        public ButtonEvent onDown;
-        public ButtonEvent onUp;
-        public ButtonEvent onClick;
-        public ButtonEvent onExit;
+        public UnityEvent onEnter;
+        public UnityEvent onDown;
+        public UnityEvent onUp;
+        public UnityEvent onClick;
+        public UnityEvent onExit;
 
-        public ButtonEvent onBeginDrag;
-        public ButtonEvent onDrag;
-        public ButtonEvent onEndDrag;
+        public UnityEvent onBeginDrag;
+        public UnityEvent onDrag;
+        public UnityEvent onEndDrag;
 
         protected bool isInit = false;
 
@@ -27,22 +27,22 @@ namespace ExtendedButtons
             isInit = true;
 
             if (onClick == null)
-                onClick = new ButtonEvent();
+                onClick = new UnityEvent();
             if (onDown == null)
-                onDown = new ButtonEvent();
+                onDown = new UnityEvent();
             if (onUp == null)
-                onUp = new ButtonEvent();
+                onUp = new UnityEvent();
             if (onEnter == null)
-                onEnter = new ButtonEvent();
+                onEnter = new UnityEvent();
             if (onExit == null)
-                onExit = new ButtonEvent();
+                onExit = new UnityEvent();
 
             if (onBeginDrag == null)
-                onBeginDrag = new ButtonEvent();
+                onBeginDrag = new UnityEvent();
             if (onDrag == null)
-                onDrag = new ButtonEvent();
+                onDrag = new UnityEvent();
             if (onEndDrag == null)
-                onEndDrag = new ButtonEvent();
+                onEndDrag = new UnityEvent();
         }
 
         protected void Awake()
@@ -50,10 +50,10 @@ namespace ExtendedButtons
             Init();
         }
 
-        [System.Serializable]
-        public class ButtonEvent : UnityEvent
-        {
-            public ButtonEvent() { }
-        }
+        //[System.Serializable]
+        //public class ButtonEvent : UnityEvent
+        //{
+        //    public ButtonEvent() { }
+        //}
     }
 }

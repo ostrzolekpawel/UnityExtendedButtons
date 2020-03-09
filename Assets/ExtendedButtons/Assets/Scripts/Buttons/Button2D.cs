@@ -7,17 +7,16 @@ using UnityEngine.UI;
 namespace ExtendedButtons
 {
     [RequireComponent(typeof(ICanvasElement))]
-    public class Button2D : Selectable, IPointerClickHandler, IEventSystemHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class Button2D : Button, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        public ButtonEvent onEnter;
-        public ButtonEvent onDown; 
-        public ButtonEvent onUp;   
-        public ButtonEvent onClick;
-        public ButtonEvent onExit;
+        public UnityEvent onEnter;
+        public UnityEvent onDown; 
+        public UnityEvent onUp;
+        public UnityEvent onExit;
 
-        public ButtonEvent onBeginDrag;
-        public ButtonEvent onDrag;
-        public ButtonEvent onEndDrag;
+        public UnityEvent onBeginDrag;
+        public UnityEvent onDrag;
+        public UnityEvent onEndDrag;
 
         protected bool isInit = false;
 
@@ -27,22 +26,20 @@ namespace ExtendedButtons
             isInit = true;
 
             if (onEnter == null)
-                onEnter = new ButtonEvent();
+                onEnter = new UnityEvent();
             if (onDown == null)
-                onDown = new ButtonEvent();
-            if (onClick == null)
-                onClick = new ButtonEvent();
+                onDown = new UnityEvent();
             if (onUp == null)
-                onUp = new ButtonEvent();
+                onUp = new UnityEvent();
             if (onExit == null)
-                onExit = new ButtonEvent();
+                onExit = new UnityEvent();
 
             if (onBeginDrag == null)
-                onBeginDrag = new ButtonEvent();
+                onBeginDrag = new UnityEvent();
             if (onDrag == null)
-                onDrag = new ButtonEvent();
+                onDrag = new UnityEvent();
             if (onEndDrag == null)
-                onEndDrag = new ButtonEvent();
+                onEndDrag = new UnityEvent();
         }
         
         protected override void Awake()
@@ -51,12 +48,7 @@ namespace ExtendedButtons
         }
 
         protected Button2D() { }
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            if (!interactable) return;
-            onClick?.Invoke();
-        }
+        
 
         public override void OnPointerDown(PointerEventData eventData)
         {
@@ -95,12 +87,6 @@ namespace ExtendedButtons
         public void OnEndDrag(PointerEventData eventData)
         {
             onEndDrag?.Invoke();
-        }
-
-        [Serializable]
-        public class ButtonEvent : UnityEvent
-        {
-            public ButtonEvent() { }
         }
     }
 }
