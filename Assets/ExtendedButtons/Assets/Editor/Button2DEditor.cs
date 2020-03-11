@@ -1,9 +1,8 @@
-﻿using ExtendedButtons;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEditor.UI;
 using UnityEngine;
 
-namespace Editor
+namespace ExtendedButtons.Editor
 {
     [CustomEditor(typeof(Button2D))]
     public class Button2DEditor : ButtonEditor
