@@ -9,7 +9,7 @@ namespace ExtendedButtons.Example
 
         private void Start()
         {
-            var button = GetComponent<Button2D>();
+            var button = GetComponent<Button2DExtended>();
             button?.onEnter.AddListener(() =>
             {
                 Debug.Log("OnButton Enter");

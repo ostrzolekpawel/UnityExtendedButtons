@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace ExtendedButtons.Editor
 {
-    [CustomEditor(typeof(Button2D))]
-    public class Button2DEditor : ButtonEditor
+    [CustomEditor(typeof(Button2DExtended))]
+    public class Button2DExtendedEditor : ButtonEditor
     {
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
 
-            Button2D targetButton = (Button2D)target;
+            Button2DExtended targetButton = (Button2DExtended)target;
 
             SerializedProperty property = serializedObject.FindProperty("onEnter");
             EditorGUILayout.PropertyField(property, new GUILayoutOption[0]);
@@ -23,6 +23,15 @@ namespace ExtendedButtons.Editor
             EditorGUILayout.PropertyField(property, new GUILayoutOption[0]);
 
             property = serializedObject.FindProperty("onExit");
+            EditorGUILayout.PropertyField(property, new GUILayoutOption[0]);
+
+            property = serializedObject.FindProperty("onBeginDrag");
+            EditorGUILayout.PropertyField(property, new GUILayoutOption[0]);
+
+            property = serializedObject.FindProperty("onDrag");
+            EditorGUILayout.PropertyField(property, new GUILayoutOption[0]);
+
+            property = serializedObject.FindProperty("onEndDrag");
             EditorGUILayout.PropertyField(property, new GUILayoutOption[0]);
 
             serializedObject.ApplyModifiedProperties();

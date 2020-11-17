@@ -444,8 +444,8 @@ GameObject:
   - component: {fileID: 425327649}
   - component: {fileID: 425327652}
   - component: {fileID: 425327651}
-  - component: {fileID: 425327650}
   - component: {fileID: 425327653}
+  - component: {fileID: 425327650}
   m_Layer: 5
   m_Name: ViaScript
   m_TagString: Untagged
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 425327648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4ec17c3f7a304f44b2721c7a1f40139, type: 3}
+  m_Script: {fileID: 11500000, guid: ce2e07278a434f547972ea7220dba8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1778,21 +1778,6 @@ MonoBehaviour:
           m_StringArgument: OnButton Exit
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onBeginDrag:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onDrag:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onEndDrag:
-    m_PersistentCalls:
-      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1809047364

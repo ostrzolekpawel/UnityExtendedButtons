@@ -6,12 +6,16 @@ using UnityEngine.UI;
 namespace ExtendedButtons
 {
     [RequireComponent(typeof(ICanvasElement))]
-    public class Button2D : Button
+    public class Button2DExtended : Button, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         public UnityEvent onEnter;
-        public UnityEvent onDown;
+        public UnityEvent onDown; 
         public UnityEvent onUp;
         public UnityEvent onExit;
+
+        public UnityEvent onBeginDrag;
+        public UnityEvent onDrag;
+        public UnityEvent onEndDrag;
 
         protected bool isInit = false;
 
@@ -28,15 +32,22 @@ namespace ExtendedButtons
                 onUp = new UnityEvent();
             if (onExit == null)
                 onExit = new UnityEvent();
-        }
 
+            if (onBeginDrag == null)
+                onBeginDrag = new UnityEvent();
+            if (onDrag == null)
+                onDrag = new UnityEvent();
+            if (onEndDrag == null)
+                onEndDrag = new UnityEvent();
+        }
+        
         protected override void Awake()
         {
             Init();
         }
 
-        protected Button2D() { }
-
+        protected Button2DExtended() { }
+        
 
         public override void OnPointerDown(PointerEventData eventData)
         {
@@ -60,6 +71,21 @@ namespace ExtendedButtons
         {
             base.OnPointerExit(eventData);
             onExit?.Invoke();
+        }
+
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            onBeginDrag?.Invoke();
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            onDrag?.Invoke();
+        }
+
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            onEndDrag?.Invoke();
         }
     }
 }
