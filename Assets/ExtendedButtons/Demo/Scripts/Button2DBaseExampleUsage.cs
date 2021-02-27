@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 namespace ExtendedButtons.Example
 {
-    public class Button2DExampleUsage : MonoBehaviour
+    public class Button2DBaseExampleUsage : MonoBehaviour
     {
         [SerializeField] private Text debugText;
 
         private void Start()
         {
-            var button = GetComponent<Button2D>();
+            var button = GetComponent<Button2DBase>();
             button?.onEnter.AddListener(() =>
             {
                 Debug.Log("OnButton Enter");
@@ -34,21 +34,6 @@ namespace ExtendedButtons.Example
             {
                 Debug.Log("OnButton Exit");
                 debugText.text = "OnButton Exit";
-            });
-            button?.onBeginDrag.AddListener(() =>
-            {
-                Debug.Log("OnButton BeginDrag");
-                debugText.text = "OnButton BeginDrag";
-            });
-            button?.onDrag.AddListener(() =>
-            {
-                Debug.Log("OnButton Drag");
-                debugText.text = "OnButton Drag";
-            });
-            button?.onEndDrag.AddListener(() =>
-            {
-                Debug.Log("OnButton EndDrag");
-                debugText.text = "OnButton EndDrag";
             });
         }
     }

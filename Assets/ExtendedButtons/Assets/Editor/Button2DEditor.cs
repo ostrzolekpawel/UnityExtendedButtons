@@ -25,6 +25,15 @@ namespace ExtendedButtons.Editor
             property = serializedObject.FindProperty("onExit");
             EditorGUILayout.PropertyField(property, new GUILayoutOption[0]);
 
+            property = serializedObject.FindProperty("onBeginDrag");
+            EditorGUILayout.PropertyField(property, new GUILayoutOption[0]);
+
+            property = serializedObject.FindProperty("onDrag");
+            EditorGUILayout.PropertyField(property, new GUILayoutOption[0]);
+
+            property = serializedObject.FindProperty("onEndDrag");
+            EditorGUILayout.PropertyField(property, new GUILayoutOption[0]);
+
             serializedObject.ApplyModifiedProperties();
         }
     }
