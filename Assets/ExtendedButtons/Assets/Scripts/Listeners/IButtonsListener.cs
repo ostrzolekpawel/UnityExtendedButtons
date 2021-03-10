@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace ExtendedButtons
+﻿namespace ExtendedButtons
 {
     public interface IButtonsListener
     {

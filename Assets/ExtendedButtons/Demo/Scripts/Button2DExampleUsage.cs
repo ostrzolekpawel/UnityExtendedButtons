@@ -35,21 +35,6 @@ namespace ExtendedButtons.Example
                 Debug.Log("OnButton Exit");
                 debugText.text = "OnButton Exit";
             });
-            button?.onBeginDrag.AddListener(() =>
-            {
-                Debug.Log("OnButton BeginDrag");
-                debugText.text = "OnButton BeginDrag";
-            });
-            button?.onDrag.AddListener(() =>
-            {
-                Debug.Log("OnButton Drag");
-                debugText.text = "OnButton Drag";
-            });
-            button?.onEndDrag.AddListener(() =>
-            {
-                Debug.Log("OnButton EndDrag");
-                debugText.text = "OnButton EndDrag";
-            });
         }
     }
 }

@@ -28,7 +28,7 @@ namespace ExtendedButtons
         /// <summary>
         /// which masks ray should detect
         /// </summary>
-        [SerializeField] private LayerMask layerMask;
+        [SerializeField] private LayerMask layerMask = 1;
 
         /// <summary>
         /// which button3D is now detected
@@ -58,7 +58,7 @@ namespace ExtendedButtons
         /// <summary>
         /// when true: invoke onClick event, even after pointer onDown was moved
         /// </summary>
-        [SerializeField] private bool acceptClickAfterMove = false;
+        [SerializeField] private bool acceptClickAfterMove = true;
 
         /// <summary>
         /// button3D is locked when pointer is down

@@ -57,3 +57,4 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  acceptClickAfterMove: 1

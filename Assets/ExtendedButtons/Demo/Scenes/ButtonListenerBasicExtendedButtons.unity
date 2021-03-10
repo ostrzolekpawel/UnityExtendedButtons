@@ -212,21 +212,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  onBeginDrag:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onDrag:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onEndDrag:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &67286060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,10 +635,26 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    m_HighlightedColor:
+      r: 0.9607843
+      g: 0.9607843
+      b: 0.9607843
+      a: 1
+    m_PressedColor:
+      r: 0.78431374
+      g: 0.78431374
+      b: 0.78431374
+      a: 1
+    m_DisabledColor:
+      r: 0.78431374
+      g: 0.78431374
+      b: 0.78431374
+      a: 0.5019608
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -667,31 +668,42 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 425327651}
+  m_GroupsAllowInteraction: 1
+  m_CurrentSelectionState: 0
+  <isPointerInside>k__BackingField: 0
+  <isPointerDown>k__BackingField: 0
+  <hasSelection>k__BackingField: 0
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+    m_CallsDirty: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+    m_CallsDirty: 1
   onDown:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+    m_CallsDirty: 1
   onUp:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+    m_CallsDirty: 1
   onExit:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+    m_CallsDirty: 1
+  isInit: 1
 --- !u!114 &425327651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1300,48 +1312,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1151395036
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4648910731655336, guid: b901940dd073fde4c8b54624e4175137, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.4058499
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648910731655336, guid: b901940dd073fde4c8b54624e4175137, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 11.7222
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648910731655336, guid: b901940dd073fde4c8b54624e4175137, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 1.8562317
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648910731655336, guid: b901940dd073fde4c8b54624e4175137, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648910731655336, guid: b901940dd073fde4c8b54624e4175137, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648910731655336, guid: b901940dd073fde4c8b54624e4175137, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648910731655336, guid: b901940dd073fde4c8b54624e4175137, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648910731655336, guid: b901940dd073fde4c8b54624e4175137, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: b901940dd073fde4c8b54624e4175137, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1193638144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,21 +1967,6 @@ MonoBehaviour:
           m_StringArgument: OnButton Exit
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onBeginDrag:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onDrag:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onEndDrag:
-    m_PersistentCalls:
-      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1809047364

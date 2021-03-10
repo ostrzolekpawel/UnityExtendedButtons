@@ -6,77 +6,64 @@ using UnityEngine.UI;
 namespace ExtendedButtons
 {
     [RequireComponent(typeof(ICanvasElement))]
-    public class Button2D : Button2DBase, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class Button2D : Button
     {
-        public UnityEvent onBeginDrag;
-        public UnityEvent onDrag;
-        public UnityEvent onEndDrag;
+        public UnityEvent onEnter;
+        public UnityEvent onDown;
+        public UnityEvent onUp;
+        public UnityEvent onExit;
 
+        protected bool isInit = false;
 
-        public override void Init()
+        public virtual void Init()
         {
-            base.Init();
+            if (isInit) return;
+            isInit = true;
 
-            if (onBeginDrag == null)
-                onBeginDrag = new UnityEvent();
-            if (onDrag == null)
-                onDrag = new UnityEvent();
-            if (onEndDrag == null)
-                onEndDrag = new UnityEvent();
+            if (onEnter == null)
+                onEnter = new UnityEvent();
+            if (onDown == null)
+                onDown = new UnityEvent();
+            if (onUp == null)
+                onUp = new UnityEvent();
+            if (onExit == null)
+                onExit = new UnityEvent();
         }
-        
+
         protected override void Awake()
         {
             Init();
         }
 
         protected Button2D() { }
-        
 
-        //public override void OnPointerDown(PointerEventData eventData)
-        //{
-        //    if (!interactable) return;
-        //    base.OnPointerDown(eventData);
-        //    onDown?.Invoke();
-        //}
 
-        //public override void OnPointerUp(PointerEventData eventData)
-        //{
-        //    if (!interactable) return;
-        //    base.OnPointerUp(eventData);
-        //    onUp?.Invoke();
-        //}
-
-        //public override void OnPointerEnter(PointerEventData eventData)
-        //{
-        //    if (!interactable) return;
-        //    base.OnPointerEnter(eventData);
-        //    onEnter?.Invoke();
-        //}
-
-        //public override void OnPointerExit(PointerEventData eventData)
-        //{
-        //    if (!interactable) return;
-        //    base.OnPointerExit(eventData);
-        //    onExit?.Invoke();
-        //}
-
-        public void OnBeginDrag(PointerEventData eventData)
+        public override void OnPointerDown(PointerEventData eventData)
         {
             if (!interactable) return;
-            onBeginDrag?.Invoke();
+            base.OnPointerDown(eventData);
+            onDown?.Invoke();
         }
 
-        public void OnDrag(PointerEventData eventData)
+        public override void OnPointerUp(PointerEventData eventData)
         {
             if (!interactable) return;
-            onDrag?.Invoke();
+            base.OnPointerUp(eventData);
+            onUp?.Invoke();
         }
 
-        public void OnEndDrag(PointerEventData eventData)
+        public override void OnPointerEnter(PointerEventData eventData)
         {
             if (!interactable) return;
-            onEndDrag?.Invoke();
+            base.OnPointerEnter(eventData);
+            onEnter?.Invoke();
+        }
+
+        public override void OnPointerExit(PointerEventData eventData)
+        {
+            if (!interactable) return;
+            base.OnPointerExit(eventData);
+            onExit?.Invoke();
         }
     }
 }

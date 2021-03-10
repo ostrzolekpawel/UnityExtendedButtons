@@ -20,7 +20,6 @@ namespace ExtendedButtons
 
         protected bool isInit = false;
 
-
         public void Init()
         {
             if (isInit) return;
