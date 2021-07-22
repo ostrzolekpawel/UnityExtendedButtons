@@ -31,6 +31,9 @@ Button3D require Collider component and provide events:
 - onUp
 - onClick
 - onExit
+- onBeginDrag
+- onDrag
+- onEndDrag
 
 Button2D require Canvas Element component (ICanvasElement) and provide events:
 - onEnter
@@ -39,9 +42,20 @@ Button2D require Canvas Element component (ICanvasElement) and provide events:
 - onClick
 - onExit
 
+Button2DExtended require Canvas Element component (ICanvasElement) and provide events:
+- onEnter
+- onDown
+- onUp
+- onClick
+- onExit
+- onBeginDrag
+- onDrag
+- onEndDrag
+
 3D buttons require prefab with listener which manage all logic.
 Package contains logic and example scripts, sample scenes also one input system for mouse and touch
 
 HOW TO USE:
 To manage 3D buttons place prefab with listener on scene ("InputSystem" or "ButtonsListenerBasic") then add to 3D Object script "Button3D".
+Now Listener for 3D buttons adds automatically.
 To extend UI buttons replace button component with "Button2D"
