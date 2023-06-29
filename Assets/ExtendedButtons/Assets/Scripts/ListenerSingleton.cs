@@ -1,16 +1,13 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ExtendedButtons
 {
-
-    [InitializeOnLoad]
     public class ListenerSingleton : MonoBehaviour
     {
         private static IButtonsListener _instance;
 
         [RuntimeInitializeOnLoadMethod]
-        static void CreateInstance()
+        private static void CreateInstance()
         {
             if (_instance == null)
             {
