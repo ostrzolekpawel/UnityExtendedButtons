@@ -59,3 +59,6 @@ HOW TO USE:
 To manage 3D buttons place prefab with listener on scene ("InputSystem" or "ButtonsListenerBasic") then add to 3D Object script "Button3D".
 Now Listener for 3D buttons adds automatically.
 To extend UI buttons replace button component with "Button2D"
+
+Installation via git package URL
+UPM -> Add package from git URL... -> https://github.com/ostrzolekpawel/UnityExtendedButtons.git?path=Assets/ExtendedButtons/Assets
