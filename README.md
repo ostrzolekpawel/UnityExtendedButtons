@@ -21,6 +21,36 @@ misrepresented as being the original plugin.
 
 =============================================================================
 
+## Installation
+
+There is several options to install this package:
+- Asset Store
+- UPM
+- directly in manifest
+
+### Asset Store
+
+Go to asset store and 'Add to My Assets' this package `https://assetstore.unity.com/packages/tools/integration/extended-buttons-152732`
+
+### Unity Package Manager
+
+Open Unity Package Manager and go to **Add package from git URL...** and paste `https://github.com/ostrzolekpawel/UnityExtendedButtons.git?path=Assets/ExtendedButtons/Assets`
+
+### Manifest
+Add link to package from repository directly to manifest.json
+
+**Example**
+```json
+{
+    "dependencies": {
+        // other packages
+        // ...
+        "com.osirisgames.unityextendedbuttons": "https://github.com/ostrzolekpawel/UnityExtendedButtons.git?path=Assets/ExtendedButtons/Assets"
+    }
+}
+```
+
+## Infomration
 With this plugin you can extend UI buttons and simply add to 3D objects button like behaviour.
 Simply plugin to speed up work with UI and gameObject interactions. With this solution you can rid off OnMouse... methods and
 raycasting to objects;
@@ -59,6 +89,3 @@ HOW TO USE:
 To manage 3D buttons place prefab with listener on scene ("InputSystem" or "ButtonsListenerBasic") then add to 3D Object script "Button3D".
 Now Listener for 3D buttons adds automatically.
 To extend UI buttons replace button component with "Button2D"
-
-Installation via git package URL
-UPM -> Add package from git URL... -> https://github.com/ostrzolekpawel/UnityExtendedButtons.git?path=Assets/ExtendedButtons/Assets
