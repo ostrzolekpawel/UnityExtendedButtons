@@ -27,7 +27,7 @@ Add link to package from repository directly to manifest.json
 }
 ```
 
-## Infomration
+## Introduction
 With this plugin you can extend UI buttons and simply add to 3D objects button like behaviour.
 Simply plugin to speed up work with UI and gameObject interactions. With this solution you can rid off OnMouse... methods and
 raycasting to objects;
