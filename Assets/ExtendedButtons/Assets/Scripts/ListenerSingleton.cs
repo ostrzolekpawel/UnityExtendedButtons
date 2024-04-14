@@ -20,5 +20,7 @@ namespace ExtendedButtons
                 }
             }
         }
+
+        public static void SetInstance(IButtonsListener instance) => _instance = instance;
     }
 }
