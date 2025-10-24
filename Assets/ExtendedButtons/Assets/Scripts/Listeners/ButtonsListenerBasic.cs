@@ -80,7 +80,7 @@ namespace ExtendedButtons
                 // invoke onClick event when
                 // pointer was not moved or
                 // when flag allows read click after pointer and was still on this same object
-                if (!moved || 
+                if (!moved ||
                     (acceptClickAfterMove && (followedButton3D == buttonLocked)))
                     buttonLocked.onClick?.Invoke();
                 if (dragMoved)
@@ -100,6 +100,13 @@ namespace ExtendedButtons
                     buttonLocked.onDrag?.Invoke();
                     dragMoved = true;
                 }
+            }
+
+            if (button3DCamera == null)
+            {
+                button3DCamera = Camera.main;
+                if (button3DCamera == null)
+                    return;
             }
 
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
