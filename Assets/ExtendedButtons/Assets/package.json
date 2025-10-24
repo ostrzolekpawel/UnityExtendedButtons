@@ -1,7 +1,8 @@
 {
     "name": "com.osirisgames.unityextendedbuttons",
     "displayName": "Extended Buttons",
-    "version": "1.6.0",
+    "author": { "name": "Osiris" },
+    "version": "1.6.1",
     "description": "",
     "keywords": [],
     "category": "Tools",
